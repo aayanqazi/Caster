@@ -28,22 +28,7 @@ class App extends React.Component {
     return (
       <View style={{ flex:1 }}>
         <Header textShown={'COUNTER APPLICATION WITH EPIC'} />
-        <Card>
-          
-            <CardSection>
-            <Text>{this.props.incCounter}</Text>
-            </CardSection>
-            <CardSection>
-            <Button onPress={()=>{this.props.increment()}}>
-                   Increment
-                    </Button>
-            </CardSection>
-            <CardSection>
-            <Button onPress={()=>{this.props.decrement()}}>
-                   Decrement
-                    </Button>
-            </CardSection>
-          </Card>
+        
       </View>
     );
   }
