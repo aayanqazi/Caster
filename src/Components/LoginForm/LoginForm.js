@@ -7,7 +7,6 @@ const LoginForm = () => {
             <CardSection>
                 <Input 
                 value="Arsalan"
-                onChanged = {this.}
                 />
             </CardSection>
         </Card>

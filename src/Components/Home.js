@@ -1,17 +1,14 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import {Card,CardSection,Spinner} from '../Components/';
 
-const Home = () => {
-    return <View style={styles.conatiner}><Text>Hello World</Text> </View>
+const Home = (props) => {
+    console.log(props.data.isProcessing)
+    return (
+        <Spinner />
+    )
 }
 
-var styles = StyleSheet.create({
-    container: {
-        alignItems: "center",
-        justifyContent: "space-between",
-        backgroundColor: '#f2f2f2',
-        paddingTop: 40,
-    }
-})
+
 
 export { Home };

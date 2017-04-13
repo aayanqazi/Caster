@@ -1,7 +1,7 @@
 import CounterAction from '../Action/Counter';
 
 const INITIAL_STATE = {
-    incrementState : 0
+    incrementState : 10
 }
 
 function incrementCounter(state = INITIAL_STATE, action) {

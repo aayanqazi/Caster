@@ -3,19 +3,17 @@ import {
   StyleSheet,
   Text,
   View,
-  Linking
+  Linking,
+  ActivityIndicator
 } from 'react-native';
 import {Provider} from 'react-redux';
 import Store from './src/Store';
-import Main from './src/Container/main';
+import {Spinner} from "./src/Components/"
 import RouterComponent from './src/Router';
 
 export default class App extends React.Component {
   render() {
-    return (
-      <Provider store={Store}>
-      <RouterComponent />
-      </Provider>
+    return (<ActivityIndicator size='small' color="#0000ff" animating={true} style={{height:80,alignItems: 'center',justifyContent: 'center',padding: 8,}} />
     );
   }
 }
