@@ -1,7 +1,7 @@
 import CounterAction from '../Action/Counter';
 
 const INITIAL_STATE = {
-  isProcessing : false,
+  isProcessing : true,
   isError: false,
   errorMessage: {},
   news: {}

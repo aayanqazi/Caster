@@ -8,37 +8,33 @@ import {
 import {Constants} from 'expo'
 import Store from '../Store/index'
 import {connect} from 'react-redux';
-import NewsList from "./NewsList"
-import {Spinners} from "../Components/"
+import {Header,Card,CardSection,Button,Home, Spinners,NewsDetail} from '../Components/';
 import CounterAction from '../Store/Action/Counter'
 
 function mapStateToProps(state) {
     return {
-        incCounter : state.incrementCounter.incrementState,
         newsRequest: state.newsReducer
     };
 }
 
 function mapDispatchToProps(dispatch) {
     return {
-        increment: () => dispatch(CounterAction.increment()),
-        decrement: () => dispatch(CounterAction.decrement()),
         getNews: (data) => dispatch(CounterAction.getNews(data))
     };
 }
 
-class App extends React.Component {
-  componentWillMount(){
-    this.props.getNews("techcrunch")
+class NewsList extends React.Component {
+  renderNews() {
+      return this.props.newsRequest.isError?<Text>ERROR!!!!</Text>:this.props.newsRequest.news.articles.map(arr => <NewsDetail key={arr.title} data={arr}/>)
   }
   render() {
+      console.log(this.props.newsRequest)
     return (
         <View>
-          {this.props.newsRequest.isProcessing?<Spinners />:<NewsList />}
-          </View>
-        
-    );
+            {this.renderNews()}
+            </View>
+    )
   }
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(App);
+export default connect(mapStateToProps,mapDispatchToProps)(NewsList);

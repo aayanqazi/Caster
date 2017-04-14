@@ -13,8 +13,11 @@ import RouterComponent from './src/Router';
 
 export default class App extends React.Component {
   render() {
-    return (<ActivityIndicator size='small' color="#0000ff" animating={true} style={{height:80,alignItems: 'center',justifyContent: 'center',padding: 8,}} />
-    );
+    return (
+    <Provider store={Store}>
+    <RouterComponent />
+    </Provider>
+    )
   }
 }
 

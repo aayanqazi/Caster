@@ -1,6 +1,6 @@
-import { Observable } from "rxjs";
-import CounterAction from '../Action/Counter'
-import {api} from '../../Services/api'
+import { Observable } from 'rxjs';
+import CounterAction from '../Action/Counter';
+import { api } from '../../Services/api';
 
 class News_Requests {
 
@@ -8,15 +8,15 @@ class News_Requests {
         action$.ofType(CounterAction.GETNEWS)
             .switchMap(({ payload }) => {
                 return api.getNews(payload)
-                .switchMap(({response}) => {
+                .switchMap(({ response }) => {
                     return Observable.of({
                         type: CounterAction.NEWS_SUCCESS,
                         payload: response
                     }
                     ).catch((error) => {
                         console.log(error);
-                    })
-                })
+                    });
+                });
             })
 
     // decrement = (action$) =>
