@@ -5,7 +5,7 @@ import {View} from 'react-native';
 const Spinners = () => {
     return (
         <View style={{flex:1}}>
-            <Spinner visible={true} textContent="Please Wait ...." textStyle={{color: '#FFF'}} />
+            <Spinner visible={true} textContent="Please Wait ...." size="small" textStyle={{color: '#FFF'}} />
             </View>
     )
 }

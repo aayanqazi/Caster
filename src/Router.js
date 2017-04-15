@@ -8,7 +8,7 @@ import {
 
 const RouterComponent = () => (
         <Router>
-            <Scene key="Home" sceneStyle={{ paddingTop:60 }} component ={Main} title="News Caster" initial={true}/>
+            <Scene key="Home" sceneStyle={{ paddingTop:50 }}  component ={Main} title="News Caster" initial={true}/>
             </Router>
     );
 

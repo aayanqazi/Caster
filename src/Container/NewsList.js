@@ -3,7 +3,8 @@ import {
   StyleSheet,
   Text,
   View,
-  Linking
+  Linking,
+  ScrollView
 } from 'react-native';
 import {Constants} from 'expo'
 import Store from '../Store/index'
@@ -30,9 +31,9 @@ class NewsList extends React.Component {
   render() {
       console.log(this.props.newsRequest)
     return (
-        <View>
+        <ScrollView>
             {this.renderNews()}
-            </View>
+            </ScrollView>
     )
   }
 }
