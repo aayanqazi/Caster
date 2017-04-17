@@ -4,7 +4,8 @@ const INITIAL_STATE = {
   isProcessing : true,
   isError: false,
   errorMessage: {},
-  news: {}
+  news: {},
+  source:"techcrunch"
 };
 
 function newsReducer(state = INITIAL_STATE, action) {

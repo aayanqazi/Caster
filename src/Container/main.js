@@ -21,15 +21,13 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return {
-        increment: () => dispatch(CounterAction.increment()),
-        decrement: () => dispatch(CounterAction.decrement()),
         getNews: (data) => dispatch(CounterAction.getNews(data))
     };
 }
 
 class App extends React.Component {
   componentWillMount(){
-    this.props.getNews("techcrunch")
+    this.props.getNews(this.props.newsRequest.source)
   }
   render() {
     return (
