@@ -1,13 +1,40 @@
 import React from 'react';
 import Spinner from 'react-native-loading-spinner-overlay';
-import {View} from 'react-native';
+import { Button } from "./";
+import { View, Text } from 'react-native';
 
-const Spinners = () => {
+const Spinners = (props) => {
+    console.log("Loader", props)
     return (
-        <View style={{flex:1}}>
-            <Spinner visible={true} textContent="Please Wait ...." size="small" textStyle={{color: '#FFF'}} />
-            </View>
+        <View style={{ flex: 1 }}>
+            <Spinner visible={true} size="small" cancelable={true}>
+                <View style={style.textContainer}>
+                    <Text style={style.textContent}> Please Wait </Text>
+                <Button onPress={()=> props.cancel}> Cancell </Button>
+                </View>
+            </Spinner>
+        </View>
     )
 }
 
-export {Spinners}
+const style = {
+    textContainer: {
+        flex: 1,
+        top: 0,
+        bottom: 0,
+        left: 0,
+        right: 0,
+        justifyContent: 'center',
+        alignItems: 'center',
+        position: 'absolute',
+    },
+    textContent: {
+    top: 10,
+    height: 50,
+    fontSize: 20,
+    fontWeight: 'bold'
+  }
+
+}
+
+export { Spinners }

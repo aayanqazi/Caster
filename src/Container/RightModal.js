@@ -19,11 +19,11 @@ function mapStateToProps(state) {
 }
 function mapDispatchToProps(dispatch) {
     return {
-        getNews: (data) => dispatch(CounterAction.getNews(data))
+        getNews: (data) => dispatch(CounterAction.getNewsFromSource(data))
     };
 }
 
-class Modals extends Component {
+class RightModals extends Component {
     constructor(props) {
         super(props)
         this.state = { shift: "wirtschafts-woche" }
@@ -41,7 +41,7 @@ class Modals extends Component {
                 >
                     <View style={styles.container}>
                         <View style={styles.innerContainer}>
-                            <Text style={styles.heading}> SOURCES </Text>
+                            <Text style={styles.heading}> Catagories </Text>
                             <CardSection>
                                 <Picker
                                     style={{ flex: 1 }}
@@ -53,20 +53,17 @@ class Modals extends Component {
                                         )
                                     }}
                                 >
-                                    <Picker.Item value='' label='Select Sources' />
-
-                                    <Picker.Item label="Wirtschafts Woche" value="wirtschafts-woche" />
-                                    <Picker.Item label="Business Insider" value="business-insider" />
-                                    <Picker.Item label="Time" value="time" />
-                                    <Picker.Item label="BBC Sport" value="bbc-sport" />
-                                    <Picker.Item label="BBC News" value="bbc-news" />
-                                    <Picker.Item label="CNN" value="cnn" />
-                                    <Picker.Item label="ESPN" value="espn" />
-                                    <Picker.Item label="ESPN Cric Info" value="espn-cric-info" />
-                                    <Picker.Item label="Google News" value="google-news" />
-                                    <Picker.Item label="New Scientist" value="new-scientist" />
-                                    <Picker.Item label="Hacker News" value="hacker-news" />
-
+                                <Picker.Item value='' label='Select Catagories' />
+                                    <Picker.Item label="Buisness" value="business" />
+                                    <Picker.Item label="Entertainment" value="entertainment" />
+                                    <Picker.Item label="Gaming" value="gaming" />
+                                    <Picker.Item label="General" value="general" />
+                                    <Picker.Item label="Music" value="music" />
+                                    <Picker.Item label="Politics" value="politics" />
+                                     <Picker.Item label="Science And Nature" value="science-and-nature" />
+                                    <Picker.Item label="Sports" value="sport" />
+                                    <Picker.Item label="Technology" value="technology" />
+                                    
                                 </Picker>
                             </CardSection>
                         </View>
@@ -103,4 +100,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default connect(mapStateToProps,mapDispatchToProps)(Modals)
+export default connect(mapStateToProps,mapDispatchToProps)(RightModals)
